@@ -38,3 +38,18 @@ Grid::Grid(std::string filename) : stored_grid(1, 1)
         std::cerr << "Error Opening File " << filename << std::endl;
     }
 }
+
+const char Grid::readLetter(const int& row, const int& column)
+{
+    return this->stored_grid[row][column];
+}
+
+const int Grid::rows()
+{
+    return this->stored_grid.rows();
+}
+
+const int Grid::cols()
+{
+    return this->stored_grid.cols();
+}

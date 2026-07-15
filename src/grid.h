@@ -11,13 +11,13 @@
 class Grid
 {
     public:
-    Grid();
     Grid(std::string filename);
-    char readItem(int i, int j);
+    const char readLetter(const int& row, const int& column);
+    const int rows();
+    const int cols();
 
     private:
     matrix<char> stored_grid;
-
 };
 
 #endif
