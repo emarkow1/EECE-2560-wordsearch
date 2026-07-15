@@ -3,6 +3,8 @@
 
 #include "grid.h"
 
+// Constructor for grid class
+// Accepts the name of a file as a string and fills out a matrix with chars
 Grid::Grid(std::string filename) : stored_grid(1, 1)
 {
     std::ifstream inFile(filename);
@@ -39,9 +41,25 @@ Grid::Grid(std::string filename) : stored_grid(1, 1)
     }
 }
 
-const char Grid::readLetter(const int& row, const int& column)
+char& Grid::at(int row, int column)
 {
-    return this->stored_grid[row][column];
+    if (row < 0 || row >= stored_grid.rows() ||
+        column < 0 || column >= stored_grid.cols())
+    {
+        throw std::out_of_range("Grid::at: index out of range");
+    }
+    return stored_grid[row][column];
+}
+
+// Reads char from a specified location on the grid
+const char Grid::at(int row, int column) const
+{
+        if (row < 0 || row >= stored_grid.rows() ||
+        column < 0 || column >= stored_grid.cols())
+    {
+        throw std::out_of_range("Grid::at: index out of range");
+    }
+    return stored_grid[row][column];
 }
 
 const int Grid::rows()

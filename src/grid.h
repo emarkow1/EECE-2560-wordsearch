@@ -5,6 +5,7 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <stdexcept>
 
 #include "d_matrix.h"
 
@@ -12,7 +13,8 @@ class Grid
 {
     public:
     Grid(std::string filename);
-    const char readLetter(const int& row, const int& column);
+    char& at(int row, int column);
+    const char at(int row, int column) const;
     const int rows();
     const int cols();
 
