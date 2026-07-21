@@ -24,6 +24,30 @@ void Dictionary::readWords(const string& filename) {
     fin.close();
 }
 
+void Dictionary::sortWords(const string& filename) {
+    ofstream fout;
+    string fileName = filename;
+    fout.open(fileName.c_str());
+    if (!fout) {
+        throw "File was not opened successfully";
+    }
+
+    for (int i = 0; i < (words.size() - 1); i++) {
+        int min = i;
+        for (int j = i + 1; j < words.size(); j++) {
+            if (words[j] < words[min]) {
+                min = j;
+            }
+        }
+        swap(words[i], words[min]);
+    }
+
+    for (int i = 0; i < words.size(); i++) {
+        fout << words[i] << endl;
+    }
+    fout.close();
+}
+
 void Dictionary::lookupWord(const string& word) const {
     
 }

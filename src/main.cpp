@@ -10,8 +10,8 @@ int main() {
 
     Dictionary dict;
     dict.readWords("Dictionary.txt");
-
-    cout << dict << endl;
+    dict.sortWords("dict_sort_test.txt");
+    //cout << dict << endl;
 
     return 0;
 }

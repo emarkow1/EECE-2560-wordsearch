@@ -12,6 +12,7 @@ class Dictionary {
     public:
         Dictionary();
         void readWords(const string& filename);
+        void sortWords(const string& filename);
         void lookupWord(const string& word) const;
         friend ostream& operator<<(ostream& os, const Dictionary& dict);
     private:

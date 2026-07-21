@@ -17,4 +17,7 @@ target_include_directories(wordsearch PRIVATE src)
 add_custom_command(TARGET wordsearch POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         ${CMAKE_SOURCE_DIR}/Dictionary.txt
-        $<TARGET_FILE_DIR:wordsearch>/Dictionary.txt)
+        $<TARGET_FILE_DIR:wordsearch>/Dictionary.txt
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${CMAKE_SOURCE_DIR}/dict_sort_test.txt
+        $<TARGET_FILE_DIR:wordsearch>/dict_sort_test.txt)
