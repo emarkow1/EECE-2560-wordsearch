@@ -8,6 +8,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_executable(wordsearch 
     src/dictionary.cpp
     src/grid.cpp
+    src/main.cpp
     )
 
 target_include_directories(wordsearch PRIVATE src)
