@@ -8,10 +8,10 @@
 
 int main() {
 
+    Dictionary dict;
+    dict.readWords("Dictionary.txt");
 
-    
-
-    return -1;
+    return 0;
 }
 
 void findMatches(const Dictionary& dict, const Grid& g) {
@@ -19,7 +19,7 @@ void findMatches(const Dictionary& dict, const Grid& g) {
 
 }
 
-//not sure what arguments we will need 
+
 void search(){
 
 
