@@ -14,7 +14,7 @@ int main() {
     return -1;
 }
 
-void findMatches(const dictionary& dict, const grid& g) {
+void findMatches(const Dictionary& dict, const Grid& g) {
     
 
 }

@@ -4,15 +4,15 @@
 
 
 
-dictionary::dictionary() {
+
+Dictionary::Dictionary() {
     
 }
 
-void dictionary::readWords(const string& filename) {
-    
+void Dictionary::readWords(const string& filename) {  
 }
 
-void dictionary::lookupWord(const string& word) const {
+void Dictionary::lookupWord(const string& word) const {
     
 }
 

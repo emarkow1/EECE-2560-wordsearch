@@ -7,9 +7,9 @@
 #include <string>
 
 using namespace std;
-class dictionary {
+class Dictionary {
     public:
-        dictionary();
+        Dictionary();
         void readWords(const string& filename);
         void lookupWord(const string& word) const;
         friend ostream& printWords(ostream& os);
