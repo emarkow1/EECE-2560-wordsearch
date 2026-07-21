@@ -13,7 +13,7 @@ class Dictionary {
         Dictionary();
         void readWords(const string& filename);
         void lookupWord(const string& word) const;
-        friend ostream& printWords(ostream& os);
+        friend ostream& operator<<(ostream& os, const Dictionary& dict);
     private:
         vector<string> words;
 };

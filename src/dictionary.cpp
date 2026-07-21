@@ -22,14 +22,15 @@ void Dictionary::readWords(const string& filename) {
         words.push_back(word);
     }
     fin.close();
-
 }
 
 void Dictionary::lookupWord(const string& word) const {
     
 }
 
-ostream& printWords(ostream& os) {
-    
+ostream& operator<<(ostream& os, const Dictionary& dict) {
+    for (int i = 0; i < dict.words.size(); i++) {
+        os << dict.words[i] << " ";
+    }
     return os;
 }

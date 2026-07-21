@@ -11,6 +11,8 @@ int main() {
     Dictionary dict;
     dict.readWords("Dictionary.txt");
 
+    cout << dict << endl;
+
     return 0;
 }
 
