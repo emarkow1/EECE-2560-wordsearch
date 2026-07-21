@@ -18,4 +18,9 @@ void findMatches(const dictionary& dict, const grid& g) {
     
 
 }
-void 
+
+//not sure what arguments we will need 
+void search(){
+
+
+}
