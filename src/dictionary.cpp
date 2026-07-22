@@ -1,10 +1,52 @@
 //
 
 #include "dictionary.h"
+#include <cctype>
 
 
+// EMILES ADDITION BELOW
+// Creates a version of the word containing only letters.
+// The original word is not changed.
+string makeSortKey(const string& word)
+{
+    string key;
 
+    for (char character : word)
+    {
+        if (isalpha(static_cast<unsigned char>(character)))
+        {
+            key += character;
+        }
+    }
 
+    return key;
+}
+
+// Determines whether left should appear before right.
+bool comesBefore(const string& left, const string& right)
+{
+    string leftKey = makeSortKey(left);
+    string rightKey = makeSortKey(right);
+
+    // Compare while ignoring punctuation.
+    if (leftKey != rightKey)
+    {
+        return leftKey < rightKey;
+    }
+
+    // If the letter-only versions are identical, put the
+    // shorter original word first.
+    //
+    // Example: "cant" before "can't"
+    if (left.length() != right.length())
+    {
+        return left.length() < right.length();
+    }
+
+    // Final tie-breaker.
+    return left < right;
+}
+// END OF EMILES ADDITION
 Dictionary::Dictionary(){
 
 }
@@ -35,7 +77,8 @@ void Dictionary::sortWords(const string& filename) {
     for (int i = 0; i < (words.size() - 1); i++) {
         int min = i;
         for (int j = i + 1; j < words.size(); j++) {
-            if (words[j] < words[min]) {
+        //altered BELOW - EMILE SATER
+            if (comesBefore(words[j], words[min])) {
                 min = j;
             }
         }
