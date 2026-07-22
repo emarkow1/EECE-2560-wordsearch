@@ -91,8 +91,23 @@ void Dictionary::sortWords(const string& filename) {
     fout.close();
 }
 
-void Dictionary::lookupWord(const string& word) const {
-    
+int Dictionary::lookupWord(const string& target) const {
+    int first = 0;
+    int last = words.size() - 1;
+    while (first <= last) {
+        int mid = floor((first + last) / 2);
+        string midValue = words[mid];
+        if (target == midValue) {
+            return mid;
+        }
+        else if (target < midValue) {
+            last = mid - 1;
+        }
+        else {
+            first = mid + 1;
+        }
+    }
+    return -1; 
 }
 
 ostream& operator<<(ostream& os, const Dictionary& dict) {
