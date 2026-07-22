@@ -18,7 +18,6 @@ string Dictionary::makeSortKey(const string& word)
             key += character;
         }
     }
-
     return key;
 }
 

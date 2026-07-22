@@ -9,9 +9,11 @@
 int main() {
 
     Dictionary dict;
-    dict.readWords("Dictionary.txt");
+    //dict.readWords("Dictionary.txt");
+    dict.readWords("dictionary-sorted.txt");
     //dict.sortWords("dict_sort_test.txt");
     //cout << dict << endl;
+    cout << dict.lookupWord("Birthdate") << endl;
 
     return 0;
 }
