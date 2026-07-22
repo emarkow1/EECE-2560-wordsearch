@@ -1,8 +1,12 @@
 //
 
 #include "dictionary.h"
-#include <cctype>
 
+#include <cctype>
+#include <chrono>
+
+
+using namespace std;
 
 // EMILES ADDITION BELOW
 // Creates a version of the word containing only letters.
@@ -24,25 +28,7 @@ string Dictionary::makeSortKey(const string& word)
 // Determines whether left should appear before right.
 bool Dictionary::comesBefore(const string& left, const string& right)
 {
-    string leftKey = makeSortKey(left);
-    string rightKey = makeSortKey(right);
-
-    // Compare while ignoring punctuation.
-    if (leftKey != rightKey)
-    {
-        return leftKey < rightKey;
-    }
-
-    // If the letter-only versions are identical, put the
-    // shorter original word first.
-    //
-    // Example: "cant" before "can't"
-    if (left.length() != right.length())
-    {
-        return left.length() < right.length();
-    }
-
-    // Final tie-breaker.
+    // Compare
     return left < right;
 }
 // END OF EMILES ADDITION
@@ -60,12 +46,13 @@ void Dictionary::readWords(const string& filename) {
     }
     string word;
     while (fin >> word) {
-        words.push_back(word);
+        words.push_back(makeSortKey(word)); //not sure if makeSortKey is even needed tbh?
     }
     fin.close();
 }
 
 void Dictionary::sortWords(const string& filename) {
+    auto start = std::chrono::system_clock::now();
     ofstream fout;
     string fileName = filename;
     fout.open(fileName.c_str());
@@ -76,13 +63,30 @@ void Dictionary::sortWords(const string& filename) {
     for (int i = 0; i < (words.size() - 1); i++) {
         int min = i;
         for (int j = i + 1; j < words.size(); j++) {
-        //altered BELOW - EMILE SATER
-            if (comesBefore(words[j], words[min])) {
+            if (words[j] < words[min]) {
                 min = j;
             }
         }
         swap(words[i], words[min]);
     }
+
+    for (int i = 0; i < words.size(); i++) {
+        fout << words[i] << endl;
+    }
+    fout.close();
+    auto end = std::chrono::system_clock::now();
+    cout << "Runtime: " << std::chrono::duration_cast<std::chrono::seconds>(end - start).count() << " s" << std::endl;
+}
+
+void Dictionary::sortStandard(const string& filename)
+{
+    ofstream fout;
+    fout.open(filename.c_str());
+    if (!fout)
+    {
+        throw "File not opened successfully";
+    }
+    sort(words.begin(), words.end());
 
     for (int i = 0; i < words.size(); i++) {
         fout << words[i] << endl;
