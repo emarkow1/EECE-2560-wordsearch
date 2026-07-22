@@ -13,7 +13,8 @@ class Dictionary {
         Dictionary();
         void readWords(const string& filename);
         void sortWords(const string& filename);
-        int lookupWord(const string& target) const;
+        void sortStandard(const string& filename);
+        void lookupWord(const string& word) const;
         friend ostream& operator<<(ostream& os, const Dictionary& dict);
     private:
         vector<string> words;
