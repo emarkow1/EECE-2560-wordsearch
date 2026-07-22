@@ -7,16 +7,16 @@
 // Accepts the name of a file as a string and fills out a matrix with chars
 Grid::Grid(std::string filename) : stored_grid(1, 1)
 {
-    std::ifstream inFile(filename);
-    std::string line;
+    ifstream inFile(filename);
+    string line;
 
     if (inFile.is_open())
     {
         // Extract n (rows) and m (columns) from the first line of a file
-        std::getline(inFile, line, ' ');
+        getline(inFile, line, ' ');
         int n = stoi(line);
 
-        std::getline(inFile, line);
+        getline(inFile, line);
         int m = stoi(line);
 
         stored_grid = matrix<char>(n, m);
@@ -24,11 +24,11 @@ Grid::Grid(std::string filename) : stored_grid(1, 1)
         n = 0;
         
         // Extract characters from file into internal matrix
-        while (std::getline(inFile, line))
+        while (getline(inFile, line))
         {
             m = 0;
-            std::stringstream ss(line);
-            for (std::string letter; std::getline(ss, letter, ' ');)
+            stringstream ss(line);
+            for (string letter; std::getline(ss, letter, ' ');)
             {
                 stored_grid[n][m] = letter[0];
                 m++;
@@ -37,7 +37,7 @@ Grid::Grid(std::string filename) : stored_grid(1, 1)
         }
         inFile.close();
     } else {
-        std::cerr << "Error Opening File " << filename << std::endl;
+        cerr << "Error Opening File " << filename << std::endl;
     }
 }
 
@@ -46,7 +46,7 @@ char& Grid::at(int row, int column)
     if (row < 0 || row >= stored_grid.rows() ||
         column < 0 || column >= stored_grid.cols())
     {
-        throw std::out_of_range("Grid::at: index out of range");
+        throw out_of_range("Grid::at: index out of range");
     }
     return stored_grid[row][column];
 }
@@ -57,17 +57,17 @@ const char Grid::at(int row, int column) const
         if (row < 0 || row >= stored_grid.rows() ||
         column < 0 || column >= stored_grid.cols())
     {
-        throw std::out_of_range("Grid::at: index out of range");
+        throw out_of_range("Grid::at: index out of range");
     }
     return stored_grid[row][column];
 }
 
-const int Grid::rows()
+int Grid::rows() const
 {
     return this->stored_grid.rows();
 }
 
-const int Grid::cols()
+int Grid::cols() const
 {
     return this->stored_grid.cols();
 }
