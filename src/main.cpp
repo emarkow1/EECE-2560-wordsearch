@@ -10,7 +10,7 @@ int main() {
 
     Dictionary dict;
     dict.readWords("Dictionary.txt");
-    dict.sortWords("dict_sort_test.txt");
+    //dict.sortWords("dict_sort_test.txt");
     //cout << dict << endl;
 
     return 0;
