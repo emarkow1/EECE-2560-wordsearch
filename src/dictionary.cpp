@@ -1,7 +1,7 @@
 //
 
 #include "dictionary.h"
-
+#include <algorithm>
 #include <cctype>
 #include <chrono>
 

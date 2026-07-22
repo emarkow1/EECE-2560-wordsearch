@@ -14,7 +14,7 @@ class Dictionary {
         void readWords(const string& filename);
         void sortWords(const string& filename);
         void sortStandard(const string& filename);
-        void lookupWord(const string& word) const;
+        int lookupWord(const string& target) const;
         friend ostream& operator<<(ostream& os, const Dictionary& dict);
     private:
         vector<string> words;
