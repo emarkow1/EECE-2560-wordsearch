@@ -37,6 +37,37 @@ void findMatches(const Dictionary& dict, const Grid& g) {
                     }
                 }
             }
+            word = "";
+            for (int k = 0; k < g.rows(); k++) {
+                int loopAround = (i - k + g.rows()) % g.rows();
+                word += g.at(loopAround, j);
+                if (word.length() >= 5) {
+                    if (dict.lookupWord(word) != -1) {
+                        cout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
+                    }
+                }
+            }
+            word = "";
+            for (int k = 0; k < g.cols(); k++) {
+                int loopAround = (j + k) % g.cols();
+                word += g.at(i, loopAround);
+                if (word.length() >= 5) {
+                    if (dict.lookupWord(word) != -1) {
+                        cout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
+                    }
+                }
+            }
+            word = "";
+            for (int k = 0; k < g.cols(); k++) {
+                int loopAround = (j - k + g.cols()) % g.cols();
+                word += g.at(i, loopAround);
+                if (word.length() >= 5) {
+                    if (dict.lookupWord(word) != -1) {
+                        cout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
+                    }
+                }
+            }
+
         }
     }
 
