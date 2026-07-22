@@ -18,6 +18,9 @@ class Dictionary {
         friend ostream& operator<<(ostream& os, const Dictionary& dict);
     private:
         vector<string> words;
+
+        string makeSortKey(const string& word);
+        bool comesBefore(const string& left, const string& right);
 };
 
 

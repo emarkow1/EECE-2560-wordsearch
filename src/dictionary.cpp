@@ -11,7 +11,7 @@ using namespace std;
 // EMILES ADDITION BELOW
 // Creates a version of the word containing only letters.
 // The original word is not changed.
-string makeSortKey(const string& word)
+string Dictionary::makeSortKey(const string& word)
 {
     string key;
 
@@ -27,7 +27,7 @@ string makeSortKey(const string& word)
 }
 
 // Determines whether left should appear before right.
-bool comesBefore(const string& left, const string& right)
+bool Dictionary::comesBefore(const string& left, const string& right)
 {
     // Compare
     return left < right;
