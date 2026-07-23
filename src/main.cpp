@@ -8,6 +8,7 @@
 using namespace std;
 
 void findMatches(const Dictionary& dict, const Grid& g);
+void search();
 
 int main() {
 
@@ -20,6 +21,9 @@ int main() {
     cout << dict.lookupWord("Birthdate") << endl;
     Grid g("input15.txt");
     findMatches(dict, g);
+
+    search();
+
     return 0;
 }
 
@@ -136,5 +140,22 @@ void search(){
     dict.readWords("Dictionary.txt");
     dict.sortStandard("dict_sort_test.txt");
     findMatches(dict, g);
+    ifstream fin;
+    string fileName = "output.txt";
+    fin.open(fileName.c_str());
+    if (!fin) {
+        throw "File was not opened successfully";
+    }
+    cout << "Candidate words found in the dictionary: " << endl;
+    string word;
+
+    //skip the header line
+    getline(fin, word); 
+    while (getline(fin, word)) {
+        stringstream ss(word);
+        ss >> word; // extract the first word from the line
+        cout << word << endl;
+    }
+    fin.close();
 
 }
