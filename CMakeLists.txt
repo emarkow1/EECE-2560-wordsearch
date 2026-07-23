@@ -14,22 +14,7 @@ add_executable(wordsearch
 target_include_directories(wordsearch PRIVATE src)
 
 
-add_custom_command(TARGET wordsearch POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${CMAKE_SOURCE_DIR}/Dictionary.txt
-        $<TARGET_FILE_DIR:wordsearch>/Dictionary.txt
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${CMAKE_SOURCE_DIR}/dict_sort_test.txt
-        $<TARGET_FILE_DIR:wordsearch>/dict_sort_test.txt
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${CMAKE_SOURCE_DIR}/dictionary-sorted.txt
-        $<TARGET_FILE_DIR:wordsearch>/dictionary-sorted.txt
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${CMAKE_SOURCE_DIR}/input15.txt
-        $<TARGET_FILE_DIR:wordsearch>/input15.txt)
 
-    
-        
 
 # cmake_minimum_required(VERSION 3.10)
 

@@ -24,7 +24,14 @@ int main() {
 }
 
 void findMatches(const Dictionary& dict, const Grid& g) {
-    cout << "word       start point (i, j)    found_index)" << endl;
+    ofstream fout;
+    fout.open("output.txt");
+    if (!fout) {
+        throw "File was not opened successfully";
+    }
+
+    fout << "word       start point (i, j)    found_index" << endl;
+
     for (int i = 0; i < g.rows(); i++) {
         for (int j = 0; j < g.cols(); j++) {
             string word;
@@ -33,7 +40,7 @@ void findMatches(const Dictionary& dict, const Grid& g) {
                 word += g.at(loopAround, j);
                 if (word.length() >= 5) {
                     if (dict.lookupWord(word) != -1) {
-                        cout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
+                        fout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
                     }
                 }
             }
@@ -43,7 +50,7 @@ void findMatches(const Dictionary& dict, const Grid& g) {
                 word += g.at(loopAround, j);
                 if (word.length() >= 5) {
                     if (dict.lookupWord(word) != -1) {
-                        cout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
+                        fout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
                     }
                 }
             }
@@ -53,7 +60,7 @@ void findMatches(const Dictionary& dict, const Grid& g) {
                 word += g.at(i, loopAround);
                 if (word.length() >= 5) {
                     if (dict.lookupWord(word) != -1) {
-                        cout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
+                        fout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
                     }
                 }
             }
@@ -63,7 +70,7 @@ void findMatches(const Dictionary& dict, const Grid& g) {
                 word += g.at(i, loopAround);
                 if (word.length() >= 5) {
                     if (dict.lookupWord(word) != -1) {
-                        cout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
+                        fout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
                     }
                 }
             }
@@ -75,7 +82,7 @@ void findMatches(const Dictionary& dict, const Grid& g) {
                 word += g.at(loopAroundr, loopAroundc);
                 if (word.length() >= 5) {
                     if (dict.lookupWord(word) != -1) {
-                        cout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
+                        fout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
                     }
                 }
             }
@@ -86,7 +93,7 @@ void findMatches(const Dictionary& dict, const Grid& g) {
                 word += g.at(loopAroundr, loopAroundc);
                 if (word.length() >= 5) {
                     if (dict.lookupWord(word) != -1) {
-                        cout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
+                        fout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
                     }
                 }
             }
@@ -97,7 +104,7 @@ void findMatches(const Dictionary& dict, const Grid& g) {
                 word += g.at(loopAroundr, loopAroundc);
                 if (word.length() >= 5) {
                     if (dict.lookupWord(word) != -1) {
-                        cout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
+                        fout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
                     }
                 }
             }
@@ -108,16 +115,26 @@ void findMatches(const Dictionary& dict, const Grid& g) {
                 word += g.at(loopAroundr, loopAroundc);
                 if (word.length() >= 5) {
                     if (dict.lookupWord(word) != -1) {
-                        cout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
+                        fout << word <<  " (" << i << ", " << j << ") " <<  dict.lookupWord(word) << endl;
                     }
                 }
             }
         }
     }
+    fout.close();
 }
 
-
+/*Implement a global function search() which (1) reads the name of the grid file from the
+keyboard, (2) read the data from input files for grid and dictionary, (3) sort all words in the
+dictionary, and (4) prints out candidate words that can be found in the dictionary. */
 void search(){
-
+    cout << "Enter the name of the grid file: ";
+    string gridFile;
+    cin >> gridFile;
+    Grid g(gridFile);
+    Dictionary dict;
+    dict.readWords("Dictionary.txt");
+    dict.sortStandard("dict_sort_test.txt");
+    findMatches(dict, g);
 
 }

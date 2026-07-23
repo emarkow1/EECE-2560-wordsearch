@@ -52,7 +52,7 @@ void Dictionary::readWords(const string& filename) {
 }
 
 void Dictionary::sortWords(const string& filename) {
-    auto start = std::chrono::system_clock::now();
+    auto start = chrono::system_clock::now();
     ofstream fout;
     string fileName = filename;
     fout.open(fileName.c_str());
@@ -74,8 +74,8 @@ void Dictionary::sortWords(const string& filename) {
         fout << words[i] << endl;
     }
     fout.close();
-    auto end = std::chrono::system_clock::now();
-    cout << "Runtime: " << std::chrono::duration_cast<std::chrono::seconds>(end - start).count() << " s" << std::endl;
+    auto end = chrono::system_clock::now();
+    cout << "Runtime: " << chrono::duration_cast<chrono::seconds>(end - start).count() << " s" << std::endl;
 }
 
 void Dictionary::sortStandard(const string& filename)
