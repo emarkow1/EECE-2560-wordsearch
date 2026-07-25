@@ -36,7 +36,8 @@ Dictionary::Dictionary(){
 
 }
 
-
+// readWords intakes the name of the dictionary txt file, opens it, 
+// and reads the words then stores them in a words vector.
 void Dictionary::readWords(const string& filename) {  
     ifstream fin;
     string fileName = filename;
@@ -51,6 +52,10 @@ void Dictionary::readWords(const string& filename) {
     fin.close();
 }
 
+// sortWords intakes the name of the dictionary txt file, opens it, and sorts,
+// the words using selectionsort and rewrites the sorted words to the txt file.
+// This function also uses the chrono class to record the time the sorting
+// takes and prints the runtime to console.
 void Dictionary::sortWords(const string& filename) {
     auto start = chrono::system_clock::now();
     ofstream fout;
@@ -77,7 +82,9 @@ void Dictionary::sortWords(const string& filename) {
     auto end = chrono::system_clock::now();
     cout << "Runtime: " << chrono::duration_cast<chrono::seconds>(end - start).count() << " s" << std::endl;
 }
-
+// sortStandard functions intakes the name of the dictionary txt file, opens it
+// and iterates through each word, sorts it alphabetically, and rewrites 
+// the sorted words to the txt file.
 void Dictionary::sortStandard(const string& filename)
 {
     ofstream fout;
@@ -93,7 +100,10 @@ void Dictionary::sortStandard(const string& filename)
     }
     fout.close();
 }
-
+// lookupWord function takes the target word in the form of a string and
+// uses binary search to search through the word list and then returns the
+// index in which the target word is located within the dictionary object.
+// If unsuccessful, returns -1.
 int Dictionary::lookupWord(const string& target) const {
     int first = 0;
     int last = words.size() - 1;
@@ -112,7 +122,7 @@ int Dictionary::lookupWord(const string& target) const {
     }
     return -1; 
 }
-
+// Overloaded output operator << to print the word list
 ostream& operator<<(ostream& os, const Dictionary& dict) {
     for (int i = 0; i < dict.words.size(); i++) {
         os << dict.words[i] << " ";
