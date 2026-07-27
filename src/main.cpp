@@ -33,23 +33,6 @@ int main()
 
     return 0;
 }
-// BELOW IS THE HARDCODED/OUTADED MAIN FUNCTION
-// int main() {
-
-//     Dictionary dict;
-//     //dict.readWords("Dictionary.txt");
-//     dict.readWords("dictionary-sorted.txt");
-//     dict.sortStandard("dict_sort_test.txt");
-//     //dict.sortWords("dict_sort_test.txt");
-//     //cout << dict << endl;
-//     cout << dict.lookupWord("Birthdate") << endl;
-//     Grid g("input15.txt");
-//     findMatches(dict, g);
-
-//     search();
-
-//     return 0;
-// }
 
 
 // Defines the findMatches function that intakes the dictionary and letter grid
@@ -301,7 +284,7 @@ void search()
 
     // Sorts all words in the dictionary
     dict.sortWords("dict_sort_test.txt");
-
+    
     // Finds all words from dictionary present in grid
     findMatches(dict, g);
 
