@@ -1,3 +1,10 @@
+// EECE 2560 Wordsearch Project
+// 1-satbermacmar-2a
+// d_except.h
+//
+// Instructor provided exception-class library that is unedited
+//
+
 #ifndef EXCEPTION_CLASSES
 #define EXCEPTION_CLASSES
 

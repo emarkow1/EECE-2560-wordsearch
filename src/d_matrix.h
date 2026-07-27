@@ -1,3 +1,10 @@
+// EECE 2560 Wordsearch Project
+// 1-satbermacmar-2a
+// d_matrix.h
+//
+// Instructor-provided matrix template used by the Grid class to store the
+// wordsearch letters (unedited from original).
+//
 #ifndef MATRIX_CLASS
 #define MATRIX_CLASS
 

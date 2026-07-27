@@ -1480,7 +1480,7 @@ aiming
 aimless
 aimlessly
 aims
-aint
+ain't
 air
 airborne
 airbrasive
@@ -3174,9 +3174,9 @@ areal
 areas
 areaway
 areaways
+aren't
 arena
 arenas
-arent
 argent
 argentine
 argentines
@@ -5587,7 +5587,7 @@ bezel
 bezels
 bezoar
 bhang
-bi
+bi-
 biannual
 biannually
 bias
@@ -7016,7 +7016,7 @@ bromides
 bromidic
 bromine
 bronc
-bronchi
+bronchi-
 bronchial
 bronchiolar
 bronchiole
@@ -7548,6 +7548,7 @@ bytes
 byway
 byword
 bywords
+c'mon
 cab
 cabal
 cabala
@@ -7914,6 +7915,7 @@ cams
 camshaft
 camshafts
 can
+can't
 canaille
 canailles
 canal
@@ -8042,7 +8044,6 @@ canopies
 canopy
 cans
 canst
-cant
 cant
 cantabile
 cantaloupe
@@ -10842,8 +10843,7 @@ clutter
 cluttered
 cluttering
 clutters
-cmon
-co
+co-
 coach
 coached
 coacher
@@ -14129,8 +14129,8 @@ coughed
 coughing
 coughs
 could
-couldnt
-couldve
+could've
+couldn't
 coulomb
 coulombic
 coulombs
@@ -14168,7 +14168,7 @@ countenancers
 countenances
 countenancing
 counter
-counter
+counter-
 counteract
 counteracted
 counteracting
@@ -17477,7 +17477,7 @@ derrick
 derricks
 derriere
 derrieres
-derring
+derring-
 derringer
 derringers
 derris
@@ -18203,7 +18203,7 @@ diddle
 diddled
 diddles
 diddling
-didnt
+didn't
 dido
 didoes
 didos
@@ -19813,7 +19813,7 @@ doers
 does
 doeskin
 doeskins
-doesnt
+doesn't
 doff
 doffed
 doffing
@@ -19969,6 +19969,7 @@ domino
 dominoes
 dominos
 don
+don't
 dona
 donate
 donated
@@ -19989,7 +19990,6 @@ donnybrooks
 donor
 donors
 dons
-dont
 donut
 donuts
 doodad
@@ -23450,7 +23450,7 @@ estuaries
 estuary
 et
 eta
-etc
+etc.
 etcetera
 etch
 etched
@@ -31299,7 +31299,7 @@ hackwork
 had
 haddock
 haddocks
-hadnt
+hadn't
 hadron
 hadronic
 hadrons
@@ -31918,7 +31918,7 @@ hashed
 hashes
 hashing
 hashish
-hasnt
+hasn't
 hasp
 hasps
 hassle
@@ -32012,8 +32012,8 @@ have
 havelock
 havelocks
 haven
+haven't
 havens
-havent
 haversack
 haversacks
 having
@@ -32075,6 +32075,9 @@ hazily
 haziness
 hazing
 hazy
+he'd
+he'll
+he's
 head
 headache
 headaches
@@ -32311,7 +32314,6 @@ hector
 hectored
 hectoring
 hectors
-hed
 heddle
 heddles
 hedge
@@ -32425,7 +32427,6 @@ heliports
 helium
 helix
 helixes
-hell
 hell
 hellbender
 hellbenders
@@ -32585,6 +32586,7 @@ herds
 herdsman
 herdsmen
 here
+here's
 hereabout
 hereabouts
 hereabove
@@ -32599,7 +32601,6 @@ herein
 hereinafter
 hereof
 hereon
-heres
 heresies
 heresy
 heretic
@@ -32660,7 +32661,6 @@ herrings
 hers
 herself
 hertz
-hes
 hesitancy
 hesitant
 hesitantly
@@ -33067,7 +33067,7 @@ hocking
 hocks
 hockshop
 hockshops
-hocus
+hocus-
 hod
 hodgepodge
 hods
@@ -33686,6 +33686,7 @@ hoverers
 hovering
 hovers
 how
+how's
 howbeit
 howdah
 howdahs
@@ -33698,7 +33699,6 @@ howler
 howlers
 howling
 howls
-hows
 howsoever
 hoyden
 hoydenish
@@ -38721,7 +38721,7 @@ islet
 islets
 ism
 isms
-isnt
+isn't
 isobar
 isobaric
 isobars
@@ -38854,6 +38854,9 @@ isthmian
 isthmic
 isthmus
 it
+it'd
+it'll
+it's
 italic
 italicization
 italicize
@@ -38867,7 +38870,6 @@ itches
 itchiness
 itching
 itchy
-itd
 item
 itemization
 itemizations
@@ -38897,8 +38899,6 @@ itinerated
 itinerates
 itinerating
 itineration
-itll
-its
 its
 itself
 ivied
@@ -41078,13 +41078,13 @@ lessor
 lessors
 lest
 let
+let's
 letdown
 lethal
 lethally
 lethargic
 lethargically
 lethargy
-lets
 lets
 letted
 letter
@@ -42589,7 +42589,7 @@ lyrics
 lyrist
 lyrists
 ma
-maam
+ma'am
 macabre
 macadam
 macadamia
@@ -43878,7 +43878,7 @@ mayfly
 mayhap
 mayhem
 mayhems
-maynt
+mayn't
 mayonnaise
 mayonnaises
 mayor
@@ -44271,6 +44271,7 @@ memorizing
 memory
 memos
 men
+men's
 menace
 menaced
 menaces
@@ -44317,7 +44318,6 @@ menorah
 menorahs
 menorrhagia
 menorrhagic
-mens
 mensal
 mense
 mensed
@@ -44990,7 +44990,7 @@ mightier
 mightiest
 mightily
 mightiness
-mightnt
+mightn't
 mighty
 mignon
 mignonette
@@ -45103,7 +45103,7 @@ miller
 millers
 millet
 millets
-milli
+milli-
 milliamp
 milliampere
 milliamperes
@@ -45126,7 +45126,7 @@ milliliter
 milliliters
 millimeter
 millimeters
-millimicro
+millimicro-
 millimicron
 millimicrons
 milliner
@@ -47037,7 +47037,7 @@ mullioned
 mullioning
 mullions
 mulls
-multi
+multi-
 multicellular
 multicellularity
 multicolor
@@ -47320,7 +47320,7 @@ mustier
 mustiest
 mustily
 mustiness
-mustnt
+mustn't
 musty
 mutability
 mutable
@@ -47510,7 +47510,7 @@ nankeens
 nannie
 nannies
 nanny
-nano
+nano-
 nanoamp
 nanoampere
 nanoamperes
@@ -47731,6 +47731,7 @@ nay
 nays
 nazi
 nazis
+ne'er
 neap
 neaps
 near
@@ -47846,10 +47847,9 @@ needlework
 needleworker
 needleworkers
 needling
-neednt
+needn't
 needs
 needy
-neer
 nefarious
 nefariously
 nefariousness
@@ -47928,7 +47928,7 @@ nematic
 nemeses
 nemesis
 neo
-neo
+neo-
 neoclassic
 neoclassical
 neoclassicism
@@ -48478,7 +48478,8 @@ nomographs
 nomography
 nomological
 nomothetic
-non
+non-
+non-self-governing
 nonabrasive
 nonabsorbable
 nonabsorbent
@@ -49213,7 +49214,6 @@ nonsegregated
 nonsegregation
 nonselected
 nonselective
-nonselfgoverning
 nonsense
 nonsensical
 nonsensically
@@ -49802,6 +49802,7 @@ nymphomaniacs
 nymphs
 nystagmic
 nystagmus
+o'clock
 oaf
 oafish
 oafishly
@@ -50202,7 +50203,6 @@ ochlocratically
 ochlocrats
 ochre
 ochreous
-oclock
 octagon
 octagonal
 octagonally
@@ -50409,16 +50409,16 @@ oily
 ointment
 ointments
 ok
+ok'd
+ok'ing
+ok's
 okay
 okayed
 okaying
 okays
-okd
 okeydoke
 okeydokey
-oking
 okra
-oks
 old
 olden
 older
@@ -51209,7 +51209,7 @@ oubliettes
 ouch
 ouches
 ought
-oughtnt
+oughtn't
 ounce
 ounces
 our
@@ -55476,7 +55476,7 @@ planned
 planner
 planners
 planning
-plano
+plano-
 planographic
 planography
 plans
@@ -56764,7 +56764,7 @@ prayerfulness
 prayers
 praying
 prays
-pre
+pre-
 preach
 preached
 preacher
@@ -58493,7 +58493,7 @@ protests
 prothalamia
 prothalamion
 prothalamium
-proto
+proto-
 protocol
 protocols
 protogalaxy
@@ -60274,7 +60274,7 @@ razzes
 razzing
 razzle
 razzmatazz
-re
+re-
 reabsorb
 reabsorbed
 reabsorbing
@@ -68299,13 +68299,13 @@ shamrock
 shamrocks
 shams
 shamus
+shan't
 shank
 shanked
 shanking
 shankpiece
 shankpieces
 shanks
-shant
 shanties
 shantman
 shantmen
@@ -68390,6 +68390,9 @@ shaw
 shawl
 shawls
 she
+she'd
+she'll
+she's
 sheaf
 shear
 sheared
@@ -68410,7 +68413,6 @@ sheaved
 sheaves
 sheaving
 shebang
-shed
 shed
 shedder
 shedders
@@ -68460,7 +68462,6 @@ shelf
 shelfful
 shelflike
 shell
-shell
 shellac
 shellacked
 shellacking
@@ -68505,7 +68506,6 @@ sherlock
 sherlocks
 sherries
 sherry
-shes
 shibboleth
 shibboleths
 shied
@@ -68536,7 +68536,7 @@ shilled
 shilling
 shillings
 shills
-shilly
+shilly-
 shim
 shimmed
 shimmer
@@ -68793,7 +68793,7 @@ shoulder
 shouldered
 shouldering
 shoulders
-shouldnt
+shouldn't
 shout
 shouted
 shouter
@@ -71145,11 +71145,11 @@ sombreros
 sombrous
 some
 somebody
-somebodys
+somebody's
 someday
 somehow
 someone
-someones
+someone's
 someplace
 somersault
 somersaulted
@@ -77886,11 +77886,11 @@ thanklessness
 thanks
 thanksgiving
 that
+that's
 thatch
 thatched
 thatches
 thatching
-thats
 thaw
 thawed
 thawing
@@ -77978,6 +77978,7 @@ therapist
 therapists
 therapy
 there
+there's
 thereabout
 thereabouts
 thereafter
@@ -77991,7 +77992,6 @@ thereinafter
 thereof
 thereon
 thereover
-theres
 thereto
 theretofore
 thereunder
@@ -78088,10 +78088,10 @@ theurgy
 thew
 thews
 they
-theyd
-theyll
-theyre
-theyve
+they'd
+they'll
+they're
+they've
 thiamine
 thick
 thicken
@@ -79107,17 +79107,17 @@ toppled
 topples
 toppling
 tops
+tops'l
 topsail
 topsails
 topside
-topsl
 topsoil
 topsoils
 topstitch
 topstitched
 topstitches
 topstitching
-topsy
+topsy-
 toque
 toques
 torch
@@ -81570,7 +81570,7 @@ uncalcified
 uncalculated
 uncalculating
 uncalled
-uncalled
+uncalled-
 uncanceled
 uncandid
 uncandidly
@@ -81584,7 +81584,7 @@ uncapped
 uncapping
 uncaps
 uncaptured
-uncared
+uncared-
 uncaring
 uncarpeted
 uncashed
@@ -82773,7 +82773,7 @@ unhook
 unhooked
 unhooking
 unhooks
-unhoped
+unhoped-
 unhorse
 unhorsed
 unhorses
@@ -83101,7 +83101,7 @@ unlock
 unlocked
 unlocking
 unlocks
-unlooked
+unlooked-
 unloose
 unloosed
 unloosen
@@ -83981,7 +83981,7 @@ untactful
 untagged
 untainted
 untalented
-untalked
+untalked-
 untamable
 untamed
 untangle
@@ -86580,7 +86580,7 @@ washtubs
 washwoman
 washwomen
 washy
-wasnt
+wasn't
 wasp
 waspish
 waspishly
@@ -86779,6 +86779,10 @@ waywardly
 waywardness
 wayworn
 we
+we'd
+we'll
+we're
+we've
 weak
 weaken
 weakened
@@ -86889,7 +86893,6 @@ weblike
 webs
 webworm
 webworms
-wed
 wed
 wedded
 wedder
@@ -87006,7 +87009,6 @@ welfarists
 welkin
 welkins
 well
-well
 wellaway
 wellborn
 welled
@@ -87047,8 +87049,7 @@ wends
 went
 wept
 were
-were
-werent
+weren't
 werewolf
 werewolves
 weskit
@@ -87090,7 +87091,6 @@ wetters
 wettest
 wetting
 wettish
-weve
 whack
 whacked
 whacker
@@ -87123,9 +87123,9 @@ wharfmaster
 wharfmasters
 wharves
 what
+what's
 whatever
 whatnot
-whats
 whatsoever
 wheal
 wheals
@@ -87191,6 +87191,7 @@ whencesoever
 whenever
 whensoever
 where
+where's
 whereabouts
 whereas
 whereat
@@ -87201,7 +87202,6 @@ wherein
 whereinto
 whereof
 whereon
-wheres
 wheresoever
 wherethrough
 whereto
@@ -87431,6 +87431,8 @@ whizzers
 whizzes
 whizzing
 who
+who'll
+who's
 whoa
 whodunit
 whoever
@@ -87447,7 +87449,6 @@ wholesaling
 wholesome
 wholesomely
 wholesomeness
-wholl
 wholly
 whom
 whomever
@@ -87500,7 +87501,6 @@ whortleberries
 whortleberry
 whortles
 whorts
-whos
 whose
 whosesoever
 whoso
@@ -88011,6 +88011,7 @@ wombs
 women
 womenfolk
 won
+won't
 wonder
 wondered
 wonderful
@@ -88025,7 +88026,6 @@ wonders
 wondrous
 wondrously
 wondrousness
-wont
 wonton
 wontons
 woo
@@ -88241,7 +88241,7 @@ worthwhile
 worthwhileness
 worthy
 would
-wouldnt
+wouldn't
 wound
 wounded
 wounding
@@ -88393,6 +88393,7 @@ wurst
 wye
 wyvern
 wyverns
+x'ing
 xanthate
 xanthates
 xanthene
@@ -88460,7 +88461,6 @@ xeroxed
 xeroxes
 xeroxing
 xi
-xing
 xiphisterna
 xiphisternum
 xiphoid
@@ -88501,6 +88501,7 @@ xylotomical
 xylotomies
 xylotomous
 xylotomy
+y'all
 yabber
 yabbered
 yabbering
@@ -88518,7 +88519,6 @@ yak
 yakked
 yakking
 yaks
-yall
 yam
 yamen
 yamens
@@ -88714,11 +88714,13 @@ yolky
 yon
 yonder
 yoni
-yoo
+yoo-
 yore
 you
-youd
-youll
+you'd
+you'll
+you're
+you've
 young
 youngberries
 youngberry
@@ -88733,7 +88735,6 @@ youngsters
 younker
 younkers
 your
-youre
 yours
 yourself
 yourselves
@@ -88742,7 +88743,6 @@ youthful
 youthfully
 youthfulness
 youths
-youve
 yowl
 yowled
 yowling

@@ -1,131 +1,159 @@
+// EECE 2560 Wordsearch Project
+// 1-satbermacmar-2a
+// dictionary.cpp
+//
+// This file implements the Dictionary class function that is in charge of
+// reading, sorting, timing, searching, and printing the required word list.
 //
 
 #include "dictionary.h"
 #include <algorithm>
-#include <cctype>
 #include <chrono>
 
 
 using namespace std;
 
-// EMILES ADDITION BELOW
-// Creates a version of the word containing only letters.
-// The original word is not changed.
-string Dictionary::makeSortKey(const string& word)
+Dictionary::Dictionary()
+//Initializes an empty Dictionary object
 {
-    string key;
-
-    for (char character : word)
-    {
-        if (isalpha(static_cast<unsigned char>(character)))
-        {
-            key += character;
-        }
-    }
-    return key;
 }
 
-// Determines whether left should appear before right.
-bool Dictionary::comesBefore(const string& left, const string& right)
-{
-    // Compare
-    return left < right;
-}
-// END OF EMILES ADDITION
-Dictionary::Dictionary(){
-
-}
-
-// readWords intakes the name of the dictionary txt file, opens it, 
-// and reads the words then stores them in a words vector.
-void Dictionary::readWords(const string& filename) {  
+void Dictionary::readWords(const string& filename)
+// readWords intakes the name of the dictionary txt file, opens it, and reads
+// the words then stores them in a words vector.
+{  
     ifstream fin;
     string fileName = filename;
     fin.open(fileName.c_str());
+
     if (!fin) {
         throw "File was not opened successfully";
     }
-    string word;
-    while (fin >> word) {
-        words.push_back(makeSortKey(word)); //not sure if makeSortKey is even needed tbh?
-    }
-    fin.close();
-}
 
+    string word;
+
+    //Stores each word as they appear in the input file
+    while (fin >> word)
+    {
+        words.push_back(word);
+    } // end while
+
+    fin.close();
+} // end readWords
+
+void Dictionary::sortWords(const string& filename) 
 // sortWords intakes the name of the dictionary txt file, opens it, and sorts,
 // the words using selectionsort and rewrites the sorted words to the txt file.
 // This function also uses the chrono class to record the time the sorting
 // takes and prints the runtime to console.
-void Dictionary::sortWords(const string& filename) {
+{
     auto start = chrono::system_clock::now();
     ofstream fout;
     string fileName = filename;
     fout.open(fileName.c_str());
-    if (!fout) {
+
+    if (!fout)
+    {
         throw "File was not opened successfully";
     }
 
-    for (int i = 0; i < (words.size() - 1); i++) {
+    //using selection sort to place the rest of the minimum words next.
+    for (int i = 0; i < (words.size() - 1); i++)
+    {
         int min = i;
-        for (int j = i + 1; j < words.size(); j++) {
-            if (words[j] < words[min]) {
+
+        for (int j = i + 1; j < words.size(); j++)
+        {
+            if (words[j] < words[min])
+            {
                 min = j;
             }
-        }
-        swap(words[i], words[min]);
-    }
+        } // end for
 
-    for (int i = 0; i < words.size(); i++) {
+        swap(words[i], words[min]);
+    } // end for
+
+    // Writes each sorted word on its own line.
+    for (int i = 0; i < words.size(); i++)
+    {
         fout << words[i] << endl;
-    }
+    } // end for
+
     fout.close();
+
     auto end = chrono::system_clock::now();
-    cout << "Runtime: " << chrono::duration_cast<chrono::seconds>(end - start).count() << " s" << std::endl;
-}
+    
+    cout << "Runtime: "
+    << chrono::duration_cast<chrono::seconds>(end - start).count()
+    << " s" << std::endl;
+} // end sortWords
+
+
+void Dictionary::sortStandard(const string& filename)
 // sortStandard functions intakes the name of the dictionary txt file, opens it
 // and iterates through each word, sorts it alphabetically, and rewrites 
 // the sorted words to the txt file.
-void Dictionary::sortStandard(const string& filename)
 {
     ofstream fout;
     fout.open(filename.c_str());
+
     if (!fout)
     {
         throw "File not opened successfully";
     }
+
     sort(words.begin(), words.end());
 
-    for (int i = 0; i < words.size(); i++) {
+    // ensures each sorted word is written on its own line.
+    for (int i = 0; i < words.size(); i++)
+    {
         fout << words[i] << endl;
-    }
+    } // end for
+
     fout.close();
-}
+} // end sortStandard
+
+int Dictionary::lookupWord(const string& target) const
 // lookupWord function takes the target word in the form of a string and
 // uses binary search to search through the word list and then returns the
 // index in which the target word is located within the dictionary object.
 // If unsuccessful, returns -1.
-int Dictionary::lookupWord(const string& target) const {
+{
     int first = 0;
     int last = words.size() - 1;
-    while (first <= last) {
-        int mid = floor((first + last) / 2);
+
+    // keeps on repeating the half of the search that can't contain the target.
+    while (first <= last)
+    {
+        int mid = first + (last - first) / 2;
         string midValue = words[mid];
-        if (target == midValue) {
+
+        if (target == midValue)
+        {
             return mid;
         }
-        else if (target < midValue) {
+        else if (target < midValue)
+        {
             last = mid - 1;
         }
-        else {
+        else
+        {
             first = mid + 1;
         }
-    }
+    } // end while
+
     return -1; 
-}
-// Overloaded output operator << to print the word list
-ostream& operator<<(ostream& os, const Dictionary& dict) {
-    for (int i = 0; i < dict.words.size(); i++) {
+} // end lookupWord
+
+ostream& operator<<(ostream& os, const Dictionary& dict)
+// Overloaded output operator << to print the word list. writes the present
+// words in respective dict to the respective os.
+{
+    // prints the current order of words in the vector
+    for (int i = 0; i < dict.words.size(); i++)
+    {
         os << dict.words[i] << " ";
-    }
+    } // end for
+    
     return os;
-}
+} // end operator<<
