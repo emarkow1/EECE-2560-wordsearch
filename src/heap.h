@@ -1,7 +1,8 @@
 #ifndef HEAP_H
 #define HEAP_H
 #include <vector>
-
+#include <cmath>
+#include <queue>
 using namespace std;
 
 template <typename T>
@@ -9,18 +10,19 @@ class Heap {
     public:
         Heap();
         
-        T parent(const int& i) const;
-        T left(const int& i) const;
-        T right(const int& i) const;
+        int parent(const int& i) const;
+        int left(const int& i) const;
+        int right(const int& i) const;
         T getItem(const int& i) const;
         void initalizeMaxHeap(const vector<T>& items);
-        void maxHeapify();
+        void maxHeapify(const int& i);
         void buildMaxHeap();
         vector<T> heapsort();
 
 
     private:
         vector<T> heap;
+        int heapSize;
 };
 
 

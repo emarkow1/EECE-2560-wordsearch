@@ -9,6 +9,7 @@ add_executable(wordsearch
     src/dictionary.cpp
     src/grid.cpp
     src/main.cpp
+    src/heap.cpp
     )
 
 target_include_directories(wordsearch PRIVATE src)
