@@ -146,6 +146,18 @@ int Dictionary::lookupWord(const string& target) const
     return -1; 
 } // end lookupWord
 
+void Dictionary::quicksortWords(const string& filename){
+    
+}
+
+
+void Dictionary::heapsortWords(const string& filename){
+    Heap<string> heap;
+    heap.initializeMaxHeap(words);
+    words = heap.heapsort();
+}
+
+
 ostream& operator<<(ostream& os, const Dictionary& dict)
 // Overloaded output operator << to print the word list. writes the present
 // words in respective dict to the respective os.

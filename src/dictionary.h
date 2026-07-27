@@ -12,6 +12,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include "heap.h"
 
 using namespace std;
 
@@ -40,6 +41,8 @@ class Dictionary
         int lookupWord(const string& target) const;
         // locates target in sorted word list using binary search. returns the
         // index of target (if found).
+
+        void quicksortWords(const string& filename);
 
         void heapsortWords(const string& filename);
         // sorts the words using heapsort. writes these sorted words into the
