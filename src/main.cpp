@@ -300,7 +300,7 @@ void search()
     dict.readWords("Dictionary.txt");
 
     // Sorts all words in the dictionary
-    dict.sortStandard("dict_sort_test.txt");
+    dict.sortWords("dict_sort_test.txt");
 
     // Finds all words from dictionary present in grid
     findMatches(dict, g);

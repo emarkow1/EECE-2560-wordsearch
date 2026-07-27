@@ -89,6 +89,7 @@ void Dictionary::sortWords(const string& filename)
 } // end sortWords
 
 
+//THIS FUNCTION IS FOR TESTING PURPOSES ONLY TO ALLOW FOR FASTER SORTING. 
 void Dictionary::sortStandard(const string& filename)
 // sortStandard functions intakes the name of the dictionary txt file, opens it
 // and iterates through each word, sorts it alphabetically, and rewrites 
