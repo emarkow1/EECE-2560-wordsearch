@@ -41,6 +41,10 @@ class Dictionary
         // locates target in sorted word list using binary search. returns the
         // index of target (if found).
 
+        void heapsortWords(const string& filename);
+        // sorts the words using heapsort. writes these sorted words into the
+        // file "filename"
+
         friend ostream& operator<<(ostream& os, const Dictionary& dict);
         // writes the words that are stored in dict to os.
     
