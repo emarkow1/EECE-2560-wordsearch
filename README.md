@@ -21,4 +21,4 @@ To run the project
 ./build/wordsearch
 ```
 
-The program will prompt for the name of the file with the word seach grid, which must be entered by the user.
+The program will prompt for the name of the file with the word search grid, which must be entered by the user.
