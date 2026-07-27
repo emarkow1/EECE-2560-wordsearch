@@ -26,7 +26,7 @@ T Heap<T>::getItem(const int& i) const {
 };
 
 template <typename T>
-void Heap<T>::initalizeMaxHeap(const vector<T>& items) {
+void Heap<T>::initializeMaxHeap(const vector<T>& items) {
     heap = items;
     buildMaxHeap();
 };
@@ -53,7 +53,7 @@ void Heap<T>::maxHeapify(const int& i) {
 template <typename T>
 void Heap<T>::buildMaxHeap() {
     heapSize = heap.size();
-    for (int i = floor(heap.size() / 2); i >= 0; i--) {
+    for (int i = floor(heap.size() / 2) - 1; i >= 0; i--) {
         maxHeapify(i);
     }
 };
@@ -66,6 +66,7 @@ vector<T> Heap<T>::heapsort() {
         heapSize = heapSize - 1;
         maxHeapify(0);
     }
+    return heap;
 };
 
 

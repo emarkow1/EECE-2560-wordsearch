@@ -3,6 +3,9 @@
 #include <vector>
 #include <cmath>
 #include <queue>
+#include <algorithm>
+
+
 using namespace std;
 
 template <typename T>
@@ -14,7 +17,7 @@ class Heap {
         int left(const int& i) const;
         int right(const int& i) const;
         T getItem(const int& i) const;
-        void initalizeMaxHeap(const vector<T>& items);
+        void initializeMaxHeap(const vector<T>& items);
         void maxHeapify(const int& i);
         void buildMaxHeap();
         vector<T> heapsort();
