@@ -7,9 +7,9 @@
 //
 
 #include "dictionary.h"
+#include "d_except.h"
 #include <algorithm>
 #include <chrono>
-
 
 using namespace std;
 
@@ -27,7 +27,7 @@ void Dictionary::readWords(const string& filename)
     fin.open(fileName.c_str());
 
     if (!fin) {
-        throw "File was not opened successfully";
+        throw fileOpenError(filename);
     }
 
     string word;
@@ -54,7 +54,7 @@ void Dictionary::sortWords(const string& filename)
 
     if (!fout)
     {
-        throw "File was not opened successfully";
+        throw fileOpenError(filename);
     }
 
     //using selection sort to place the rest of the minimum words next.
@@ -87,32 +87,6 @@ void Dictionary::sortWords(const string& filename)
     << chrono::duration_cast<chrono::seconds>(end - start).count()
     << " s" << std::endl;
 } // end sortWords
-
-
-//THIS FUNCTION IS FOR TESTING PURPOSES ONLY TO ALLOW FOR FASTER SORTING. 
-void Dictionary::sortStandard(const string& filename)
-// sortStandard functions intakes the name of the dictionary txt file, opens it
-// and iterates through each word, sorts it alphabetically, and rewrites 
-// the sorted words to the txt file.
-{
-    ofstream fout;
-    fout.open(filename.c_str());
-
-    if (!fout)
-    {
-        throw "File not opened successfully";
-    }
-
-    sort(words.begin(), words.end());
-
-    // ensures each sorted word is written on its own line.
-    for (int i = 0; i < words.size(); i++)
-    {
-        fout << words[i] << endl;
-    } // end for
-
-    fout.close();
-} // end sortStandard
 
 int Dictionary::lookupWord(const string& target) const
 // lookupWord function takes the target word in the form of a string and

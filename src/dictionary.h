@@ -32,12 +32,6 @@ class Dictionary
         // sorts the words using selection sort. writes these sorted words into
         // the file "filename"
 
-        // Thiis function is used for testing purposes. It sorts the words using
-        // the standard library sort to speed up the sorting process.
-        void sortStandard(const string& filename);
-        // sorts the words using the standard library sort. writes these sorted
-        // words into the file "filename"
-
         int lookupWord(const string& target) const;
         // locates target in sorted word list using binary search. returns the
         // index of target (if found).

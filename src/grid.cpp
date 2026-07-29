@@ -7,6 +7,7 @@
 //
 
 #include "grid.h"
+#include "d_except.h"
 
 Grid::Grid(std::string filename) : stored_grid(1, 1)
 // Reads Grid dimensions and characters within "filename" and stores them into
@@ -50,7 +51,7 @@ Grid::Grid(std::string filename) : stored_grid(1, 1)
     } // end if
     else
     {
-        cerr << "Error Opening File " << filename << std::endl;
+        throw fileOpenError(filename);
     } // end else
 } // end Grid constructor
 

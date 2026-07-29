@@ -10,6 +10,8 @@
 #include "dictionary.h"
 #include "grid.h"
 #include "heap.h"
+#include "d_except.h"
+#include <exception>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -48,7 +50,7 @@ void findMatches(const Dictionary& dict, const Grid& g)
 
     if (!fout)
     {
-        throw "File was not opened successfully";
+        throw fileOpenError("output.txt");
     }
 
     // Writes and formats column headers for results in output.txt
@@ -285,7 +287,6 @@ void search()
     // Sorts all words in the dictionary
     // dict.sortWords("dict_sort_test.txt");
     dict.heapsortWords("dict_sort_test.txt");
-    // dict.sortStandard("dict_sort_test.txt");
 
     // Finds all words from dictionary present in grid
     findMatches(dict, g);
@@ -298,7 +299,7 @@ void search()
 
     if (!fin)
     {
-        throw "File was not opened successfully";
+        throw fileOpenError(fileName);
     }
 
     cout << "Candidate words found in the dictionary:\n " << endl;
