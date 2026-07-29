@@ -17,6 +17,7 @@
 #include <iostream>
 #include <string>
 
+
 using namespace std;
 
 void findMatches(const Dictionary& dict, const Grid& g);
@@ -35,7 +36,15 @@ int main()
     cout << "Sorting Algorithm Options" << endl;
     cout << "1) Selection Sort\n2) Quick Sort\n3) Heap Sort\n" << endl;
     cout << "Please select the sorting algorithm used: ";
+    
     cin >> algo_choice;
+    while (algo_choice != 1 && algo_choice != 2 && algo_choice != 3) {
+        cout << "Please select a valid option by typing a number 1-3.\n";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Please select the sorting algorithm used: ";
+        cin >> algo_choice;
+    }
     search(algo_choice);
     //test
     return 0;
