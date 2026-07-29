@@ -212,9 +212,8 @@ void Dictionary::heapsortWords(const string& filename)
 
     auto end = chrono::system_clock::now();
     
-    cout << "Runtime: "
-    << chrono::duration_cast<chrono::seconds>(end - start).count()
-    << " s" << std::endl;
+    cout << "Heapsort runtime: "
+    << chrono::duration_cast<chrono::milliseconds>(end - start).count() <<" ms" << endl;
 }
 
 
