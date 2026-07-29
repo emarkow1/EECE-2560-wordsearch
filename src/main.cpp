@@ -298,7 +298,7 @@ void search(int algo_choice)
             cout << "Selection 1 complete." << endl;
             break;
         case 2:
-            dict.quicksortWords("Dictionary.txt");
+            dict.quicksort("Dictionary.txt");
             cout << "Selection 2 complete." << endl;
             break;
         case 3:
