@@ -121,23 +121,30 @@ int Dictionary::lookupWord(const string& target) const
 } // end lookupWord
 
 int Dictionary::partitionWords(int left, int right)
+// Partitions the words between left and right around a pivot and returns the
+// pivot's final sorted position.
 {
-    string x = words[right];
+    int middle = left + (right - left) / 2;
+
+    // Move the middle word to the end to use it as the pivot.
+    swap(words[middle], words[right]);
+
+    string pivot = words[right];
     int i = left - 1;
 
     for (int j = left; j < right; j++)
     {
-        if (words[j] <= x)
+        if (words[j] <= pivot)
         {
             i++;
             swap(words[i], words[j]);
         }
     }
-    
-    swap(words[i+1], words[right]);
-    
-    return (i+1);
-} // end partition
+
+    swap(words[i + 1], words[right]);
+
+    return i + 1;
+} // end partitionWords
 
 
 void Dictionary::quicksortHelper(int left, int right)
