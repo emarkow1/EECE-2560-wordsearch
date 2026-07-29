@@ -286,7 +286,7 @@ void search()
 
     // Sorts all words in the dictionary
     // dict.sortWords("dict_sort_test.txt");
-    dict.heapsortWords("dict_sort_test.txt");
+    //dict.heapsortWords("dict_sort_test.txt");
 
     dict.quicksort("dict_sort_test.txt");
 
