@@ -74,18 +74,18 @@ void Dictionary::sortWords(const string& filename)
     } // end for
 
     // Writes each sorted word on its own line.
-    for (int i = 0; i < words.size(); i++)
-    {
-        fout << words[i] << endl;
-    } // end for
+        for (int i = 0; i < words.size(); i++)
+        {
+            fout << words[i] << endl;
+        } // end for
 
-    fout.close();
+        fout.close();
 
-    auto end = chrono::system_clock::now();
-    
-    cout << "Runtime: "
-    << chrono::duration_cast<chrono::seconds>(end - start).count()
-    << " s" << std::endl;
+        auto end = chrono::system_clock::now();
+        
+        cout << "Runtime: "
+        << chrono::duration_cast<chrono::seconds>(end - start).count()
+        << " s" << std::endl;
 } // end sortWords
 
 int Dictionary::lookupWord(const string& target) const
@@ -120,15 +120,94 @@ int Dictionary::lookupWord(const string& target) const
     return -1; 
 } // end lookupWord
 
-void Dictionary::quicksortWords(const string& filename){
+int Dictionary::partitionWords(int left, int right)
+{
+    string x = words[right];
+    int i = left - 1;
+
+    for (int j = left; j < right; j++)
+    {
+        if (words[j] <= x)
+        {
+            i++;
+            swap(words[i], words[j]);
+        }
+    }
     
+    swap(words[i+1], words[right]);
+    
+    return (i+1);
+} // end partition
+
+
+void Dictionary::quicksortHelper(int left, int right)
+{
+    if (left < right)
+    {
+        int s = partitionWords(left, right);
+        quicksortHelper(left, s - 1);
+        quicksortHelper(s + 1, right);
+    }
 }
 
+void Dictionary::quicksort(const string&filename)
+{
+    auto start = chrono::system_clock::now();
 
-void Dictionary::heapsortWords(const string& filename){
+    if (!words.empty())
+    {
+        int right = words.size() - 1;
+        quicksortHelper(0, right);
+    }
+
+    ofstream fout(filename);
+
+    if (!fout)
+    {
+        throw fileOpenError(filename);
+    }
+
+    for (const string& word : words)
+    {
+        fout << word << '\n';
+    }
+
+    fout.close();
+
+    auto end = chrono::system_clock::now();
+
+   cout << "Quicksort runtime: "
+    << chrono::duration_cast<chrono::milliseconds>(end - start).count() <<" ms" << endl;
+}
+
+void Dictionary::heapsortWords(const string& filename)
+{
+    auto start = chrono::system_clock::now();
+    ofstream fout;
+    string fileName = filename;
+    fout.open(fileName.c_str());
+
+    if (!fout)
+    {
+        throw fileOpenError(filename);
+    }
+
     Heap<string> heap;
     heap.initializeMaxHeap(words);
     words = heap.heapsort();
+
+    for (int i = 0; i < words.size(); i++)
+    {
+        fout << words[i] << endl;
+    } // end for
+
+    fout.close();
+
+    auto end = chrono::system_clock::now();
+    
+    cout << "Runtime: "
+    << chrono::duration_cast<chrono::seconds>(end - start).count()
+    << " s" << std::endl;
 }
 
 
