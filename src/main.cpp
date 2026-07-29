@@ -24,14 +24,19 @@ void findMatches(const Dictionary& dict, const Grid& g);
 // long). Uses dict in order to use binary search to look up and write
 // different matches.
 
-void search();
+void search(int algo_choice);
 // loads and sorts the dictionary in the inputted "filename" grid. Finds all
 // the matching words and prints them out. 
 
 int main()
 // starts the program
 {
-    search();
+    int algo_choice;
+    cout << "Sorting Algorithm Options" << endl;
+    cout << "1) Selection Sort\n2) Quick Sort\n3) Heap Sort\n" << endl;
+    cout << "Please select the sorting algorithm used: ";
+    cin >> algo_choice;
+    search(algo_choice);
     //test
     return 0;
 }
@@ -267,7 +272,7 @@ void findMatches(const Dictionary& dict, const Grid& g)
     fout.close();
 } // end findMatches
 
-void search()
+void search(int algo_choice)
 // Implements a global function search() which 
 // - reads the name of the grid file from the keyboard, 
 // - reads the data from input files for grid & dictionary,
@@ -283,6 +288,27 @@ void search()
     // Reads the data from input files for grid & dictionary
     Dictionary dict;
     dict.readWords("Dictionary.txt");
+    
+    // Prompt user to select sorting algorith used for sorting dictionary
+    // First prints options, then prompts user for selection
+    // using a switch statement.
+    switch (algo_choice) {
+        case 1:
+            dict.sortWords("Dictionary.txt");
+            cout << "Selection 1 complete." << endl;
+            break;
+        case 2:
+            dict.quicksortWords("Dictionary.txt");
+            cout << "Selection 2 complete." << endl;
+            break;
+        case 3:
+            dict.heapsortWords("Dictionary.txt");
+            cout << "Selection 3 complete." << endl;
+            break;
+        default:
+            cout << "Please select a valid option by typing a number 1-3.\n";
+            break;
+    }
 
     // Sorts all words in the dictionary
     // dict.sortWords("dict_sort_test.txt");
