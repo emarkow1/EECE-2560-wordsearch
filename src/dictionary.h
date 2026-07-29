@@ -36,7 +36,9 @@ class Dictionary
         // locates target in sorted word list using binary search. returns the
         // index of target (if found).
 
-        void quicksortWords(const string& filename);
+        int partitionWords(int left, int right);
+
+        void quicksort(const string& filename);
 
         void heapsortWords(const string& filename);
         // sorts the words using heapsort. writes these sorted words into the
@@ -48,6 +50,9 @@ class Dictionary
     private:
         vector<string> words;
         // stores the dictionary words in their original order.
+
+        void quicksortHelper(int left, int right);
+
 }; // end Dictionary class
 
 #endif // DICTIONARY_H
