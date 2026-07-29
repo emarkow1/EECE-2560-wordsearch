@@ -177,8 +177,7 @@ void Dictionary::quicksort(const string&filename)
     auto end = chrono::system_clock::now();
 
    cout << "Quicksort runtime: "
-              << chrono::duration_cast<chrono::milliseconds>(end - start)
-                .count() <<" ms" << endl;
+    << chrono::duration_cast<chrono::milliseconds>(end - start).count() <<" ms" << endl;
 }
 
 void Dictionary::heapsortWords(const string& filename)
