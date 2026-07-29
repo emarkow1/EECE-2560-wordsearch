@@ -294,15 +294,15 @@ void search(int algo_choice)
     // using a switch statement.
     switch (algo_choice) {
         case 1:
-            dict.sortWords("Dictionary.txt");
+            dict.sortWords("dict_sort_test.txt");
             cout << "Selection 1 complete." << endl;
             break;
         case 2:
-            dict.quicksort("Dictionary.txt");
+            dict.quicksort("dict_sort_test.txt");
             cout << "Selection 2 complete." << endl;
             break;
         case 3:
-            dict.heapsortWords("Dictionary.txt");
+            dict.heapsortWords("dict_sort_test.txt");
             cout << "Selection 3 complete." << endl;
             break;
         default:
