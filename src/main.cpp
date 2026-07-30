@@ -33,18 +33,20 @@ int main()
 // starts the program
 {
     int algo_choice;
-    cout << "Sorting Algorithm Options" << endl;
-    cout << "1) Selection Sort\n2) Quick Sort\n3) Heap Sort\n" << endl;
+
+cout << "Sorting Algorithm Options" << endl;
+cout << "1) Selection Sort\n" << "2) Quick Sort\n" << "3) Heap Sort\n" << endl;
+cout << "Please select the sorting algorithm used: ";
+
+while (!(cin >> algo_choice) || algo_choice < 1 || algo_choice > 3)
+{
+    cout << "Please select a valid option by typing a number 1-3.\n";
+
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
     cout << "Please select the sorting algorithm used: ";
-    
-    cin >> algo_choice;
-    while (algo_choice != 1 && algo_choice != 2 && algo_choice != 3) {
-        cout << "Please select a valid option by typing a number 1-3.\n";
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Please select the sorting algorithm used: ";
-        cin >> algo_choice;
-    }
+}
     search(algo_choice);
     //test
     return 0;
