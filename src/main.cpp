@@ -30,7 +30,7 @@ void search(int algo_choice);
 // the matching words and prints them out. 
 
 int main()
-// starts the program
+// starts the program. prints out choices for user to choose which algorithm.
 {
     int algo_choice;
 
@@ -39,6 +39,8 @@ cout << "1) Selection Sort\n" << "2) Quick Sort\n" << "3) Heap Sort\n" << endl;
 cout << "Please select the sorting algorithm used: ";
 
 while (!(cin >> algo_choice) || algo_choice < 1 || algo_choice > 3)
+// if chosen algorithm out of bounds (1-3), then clea input and ensure that the
+// chosen algorithm input fit the bounds.
 {
     cout << "Please select a valid option by typing a number 1-3.\n";
 

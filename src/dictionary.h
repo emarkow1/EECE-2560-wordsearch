@@ -37,8 +37,11 @@ class Dictionary
         // index of target (if found).
 
         int partitionWords(int left, int right);
+        // rearranges the words around a pivot and returns the location.
 
         void quicksort(const string& filename);
+        // sorts the words using quicksort. writes these sorted words into the
+        // file "filename"
 
         void heapsortWords(const string& filename);
         // sorts the words using heapsort. writes these sorted words into the
@@ -52,6 +55,7 @@ class Dictionary
         // stores the dictionary words in their original order.
 
         void quicksortHelper(int left, int right);
+        // helper function for quicksort. recursively sorts the vector
 
 }; // end Dictionary class
 

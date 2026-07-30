@@ -148,19 +148,30 @@ int Dictionary::partitionWords(int left, int right)
 
 
 void Dictionary::quicksortHelper(int left, int right)
+// sorts the positions of the words vector recursively, using the left and
+// right as index bounds. partitions around a pivot and then sorts the
+// sections to the left and right of it.
 {
     if (left < right)
     {
+        // partitions current section, storing the returned final pivot index
         int s = partitionWords(left, right);
+
+        // sorts words to the left of the pivot
         quicksortHelper(left, s - 1);
+
+        // sorts words to the right of the pivot
         quicksortHelper(s + 1, right);
     }
-}
+} //end quicksortHelper
 
 void Dictionary::quicksort(const string&filename)
+// uses quicksort to sort the words vector by alphabet and writes the newly
+// sorted words to filename. prints runtime.
 {
     auto start = chrono::system_clock::now();
 
+    // begins quicksort using the word vector's first and last indexes 
     if (!words.empty())
     {
         int right = words.size() - 1;
@@ -174,6 +185,7 @@ void Dictionary::quicksort(const string&filename)
         throw fileOpenError(filename);
     }
 
+    // writes each sorted word to independent lines in output file
     for (const string& word : words)
     {
         fout << word << '\n';
@@ -183,13 +195,18 @@ void Dictionary::quicksort(const string&filename)
 
     auto end = chrono::system_clock::now();
 
+    // printing out runtime (ms)
    cout << "Quicksort runtime: "
-    << chrono::duration_cast<chrono::milliseconds>(end - start).count() <<" ms" << endl;
+    << chrono::duration_cast<chrono::milliseconds>(end - start).count() <<
+    " ms" << endl;
 }
 
 void Dictionary::heapsortWords(const string& filename)
+// uses a max heap to sort the words vector by alphabet and writes the newly
+// sorted words to filename. prints runtime.
 {
     auto start = chrono::system_clock::now();
+
     ofstream fout;
     string fileName = filename;
     fout.open(fileName.c_str());
@@ -199,19 +216,23 @@ void Dictionary::heapsortWords(const string& filename)
         throw fileOpenError(filename);
     }
 
+    // copies the word vector into a heap and builds a max heap. performs
+    // heapsort.
     Heap<string> heap;
     heap.initializeMaxHeap(words);
     words = heap.heapsort();
 
+    // writes each sorted word to independent lines in output file
     for (int i = 0; i < words.size(); i++)
     {
         fout << words[i] << endl;
-    } // end for
+    }
 
     fout.close();
 
     auto end = chrono::system_clock::now();
     
+    // printing out runtime (ms)
     cout << "Heapsort runtime: "
     << chrono::duration_cast<chrono::milliseconds>(end - start).count() <<" ms" << endl;
 }
