@@ -304,15 +304,15 @@ void search(int algo_choice)
     switch (algo_choice) {
         case 1:
             dict.sortWords("dict_sort_test.txt");
-            cout << "Selection 1 complete." << endl;
+            cout << "Selection sort complete.\n" << endl;
             break;
         case 2:
             dict.quicksort("dict_sort_test.txt");
-            cout << "Selection 2 complete." << endl;
+            cout << "Quick sort complete.\n" << endl;
             break;
         case 3:
             dict.heapsortWords("dict_sort_test.txt");
-            cout << "Selection 3 complete." << endl;
+            cout << "Heap sort complete.\n" << endl;
             break;
         default:
             cout << "Please select a valid option by typing a number 1-3.\n";
