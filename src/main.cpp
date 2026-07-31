@@ -50,7 +50,11 @@ while (!(cin >> algo_choice) || algo_choice < 1 || algo_choice > 3)
     cout << "Please select the sorting algorithm used: ";
 }
     search(algo_choice);
-    //test
+    //WE BELIEVE QUITSORT IS THE FASTEST ALGORITHM FOR SORTING THE DICTIONARY
+    //This is based on the runtime of each algorithm when sorting the dictionary.
+    //Quicksort runtime is always the fastest. Althought both algorithms
+    //have a average time of O(nlog(n)), quicksort in practice on this assignment 
+    // is faster than heapsort.
     return 0;
 }
 
@@ -322,12 +326,6 @@ void search(int algo_choice)
             cout << "Please select a valid option by typing a number 1-3.\n";
             break;
     }
-
-    // Sorts all words in the dictionary
-    // dict.sortWords("dict_sort_test.txt");
-    //dict.heapsortWords("dict_sort_test.txt");
-
-    //dict.quicksort("dict_sort_test.txt");
 
     // Finds all words from dictionary present in grid
     findMatches(dict, g);
