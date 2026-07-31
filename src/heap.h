@@ -1,3 +1,11 @@
+// EECE 2560 Wordsearch Project
+// 1-satbermacmar-2b
+// heap.h
+// authors: Jake Berman, Ethan Markow, Donald Mackinnon, Emile Sater
+// This file declares and implements the Heap class as a template class.
+
+
+
 #ifndef HEAP_H
 #define HEAP_H
 #include <vector>

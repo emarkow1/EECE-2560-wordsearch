@@ -1,7 +1,7 @@
 // EECE 2560 Wordsearch Project
-// 1-satbermacmar-2a
+// 1-satbermacmar-2b
 // grid.cpp
-//
+// authors: Jake Berman, Ethan Markow, Donald Mackinnon, Emile Sater
 // Implements Grid class member functions. These functions enable the reading
 // of a letter grid from a file, accessing file's characters and dimensions
 //

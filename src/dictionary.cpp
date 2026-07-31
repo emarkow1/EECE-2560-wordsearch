@@ -1,7 +1,7 @@
 // EECE 2560 Wordsearch Project
-// 1-satbermacmar-2a
+// 1-satbermacmar-2b
 // dictionary.cpp
-//
+// authors: Jake Berman, Ethan Markow, Donald Mackinnon, Emile Sater
 // This file implements the Dictionary class function that is in charge of
 // reading, sorting, timing, searching, and printing the required word list.
 //

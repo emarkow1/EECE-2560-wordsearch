@@ -1,7 +1,8 @@
 // EECE 2560 Wordsearch Project
-// 1-satbermacmar-2a
+// 1-satbermacmar-2b
 // d_except.h
-//
+// authors: Jake Berman, Ethan Markow, Donald Mackinnon, Emile Sater
+
 // Instructor provided exception-class library that is unedited
 //
 

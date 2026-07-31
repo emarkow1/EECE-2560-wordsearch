@@ -1,7 +1,7 @@
 // EECE 2560 Wordsearch Project
-// 1-satbermacmar-2a
+// 1-satbermacmar-2b
 // grid.h
-//
+// authors: Jake Berman, Ethan Markow, Donald Mackinnon, Emile Sater
 // This file declares the Grid class.
 //
 
